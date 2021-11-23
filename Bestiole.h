@@ -4,6 +4,9 @@
 
 
 #include "UImg.h"
+#include "Comportement.h"
+#include "Accessoire.h"
+#include "Capteur.h"
 
 #include <iostream>
 
@@ -23,6 +26,7 @@ private :
 
    static int              next;
 
+
 private :
    int               identite;
    int               x, y;
@@ -31,6 +35,19 @@ private :
    double            vitesse;
 
    T               * couleur;
+
+      //new code :
+   Comportement      comportement;
+
+   listCapteurs :    listCapteur
+   listAccessoires:  listAccesoires
+   int               dieProbabilty
+   int               camouflage
+
+   int :             ageLimite
+   int :             age
+
+
 
 private :
    void bouge( int xLim, int yLim );

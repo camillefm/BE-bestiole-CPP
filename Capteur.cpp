@@ -7,3 +7,4 @@ float Capteur::getDistance(int v[2]) {
 }
 
 Capteur::Capteur(void){};
+

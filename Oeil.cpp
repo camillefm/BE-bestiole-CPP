@@ -16,5 +16,3 @@ bool Oeil::vois(Bestiole b1, Bestiole b2, double distance, double angle) {
     }
     return false;
 };
-
-

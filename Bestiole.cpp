@@ -1,5 +1,6 @@
 #include "Bestiole.h"
 
+
 #include "Milieu.h"
 
 #include <cstdlib>
@@ -144,4 +145,28 @@ bool Bestiole::jeTeVois( const Bestiole & b ) const
    dist = std::sqrt( (x-b.x)*(x-b.x) + (y-b.y)*(y-b.y) );
    return ( dist <= LIMITE_VUE );
 
+}
+
+int Bestiole::getX(){
+   return x;
+}
+
+int Bestiole::getY(){
+   return y;
+}
+
+void Bestiole::setX(int newX){
+   x=newX;
+}
+
+void Bestiole::setY(int newY){
+   y=newY;
+}
+
+double Bestiole::getSpeed(){
+   return vitesse;
+}
+
+double Bestiole::getOrientation(){
+   return orientation;
 }

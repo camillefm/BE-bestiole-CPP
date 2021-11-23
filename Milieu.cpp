@@ -54,3 +54,7 @@ int Milieu::nbVoisins( const Bestiole & b )
    return nb;
 
 }
+
+Bestiole Milieu::getBestiole(int i){
+   return listeBestioles[i];
+}

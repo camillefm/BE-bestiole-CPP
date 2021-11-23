@@ -3,13 +3,18 @@
 
 #include <math.h>
 
+#include "Bestiole.h"
+
 
 class Capteur {
 
 public:
     Capteur();
 
-    virtual bool vois(Bestiole b1, Bestiole b2, float distance, float angle) = 0;
+    virtual bool vois(Bestiole b1, Bestiole b2, double distance, double angle);
 
-    float getDistance(float[2] v);
+    float getDistance(int v[2]); 
 };
+
+
+#endif

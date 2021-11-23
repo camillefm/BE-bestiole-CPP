@@ -4,8 +4,7 @@
 
 #include "UImg.h"
 #include "Comportement.h"
-#include "Accessoire.h"
-#include "Capteur.h"
+//#include "Accessoire.h"
 
 #include <iostream>
 
@@ -36,15 +35,15 @@ private :
    T               * couleur;
 
       //new code :
-   Comportement      comportement;
+   //Comportement      comportement;
 
-   listCapteurs :    listCapteur
-   listAccessoires:  listAccesoires
-   int               dieProbabilty
-   int               camouflage
+   //listCapteurs :    listCapteur
+   //listAccessoires:  listAccesoires
+   //int               dieProbabilty;
+   //int               camouflage;
 
-   int :             ageLimite
-   int :             age
+   //int :             ageLimite;
+   //int :             age;
 
 
 
@@ -62,6 +61,14 @@ public :                                           // Forme canonique :
    bool jeTeVois( const Bestiole & b ) const;
 
    void initCoords( int xLim, int yLim );
+
+   int getX();
+   int getY();
+   void setX(int newX);
+   void setY(int newY);
+
+   double getSpeed();
+   double getOrientation(); 
 
    friend bool operator==( const Bestiole & b1, const Bestiole & b2 );
 

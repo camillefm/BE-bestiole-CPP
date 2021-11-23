@@ -29,8 +29,10 @@ public :
 
    void step( void );
 
-   void addMember( const Bestiole & b ) { listeBestioles.push_back(b); listeBestioles.back().initCoords(width, height); }
+   Bestiole addMember( const Bestiole & b ) { listeBestioles.push_back(b); listeBestioles.back().initCoords(width, height); return b;}
    int nbVoisins( const Bestiole & b );
+
+   Bestiole getBestiole(int i);
 
 };
 

@@ -182,3 +182,20 @@ void Bestiole::setSpeed(double speed){
 void Bestiole::setOrientation(double angle){
    orientation=angle;
 }
+
+void Bestiole::setV(double v){
+   V=v;
+}
+
+void Bestiole::setW(double w){
+   W=w;
+}
+
+void Bestiole::setN(double n){
+   N=n;
+}
+
+
+void Bestiole::setP(double p){
+   P=p;
+}

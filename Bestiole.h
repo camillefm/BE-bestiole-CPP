@@ -33,6 +33,12 @@ private :
    double            orientation;
    double            vitesse;
 
+   double            V=1;     //coeff multiplicateur de la vitesse (nageoire)
+   double            N=1;     //coef reducteur de la vitesse (carapace)
+   double            W=1;     //coeff de reduction de la probabilité que la bestiole meure
+   double            P=0;     //coeff de camouflage
+
+
    T               * couleur;
 
       //new code :
@@ -76,6 +82,11 @@ public :                                           // Forme canonique :
 
    friend bool operator==( const Bestiole & b1, const Bestiole & b2 );
 
+      //code Accessoire related
+   void setV(double v);
+   void setW(double v);
+   void setN(double v);
+   void setP(double v);
 };
 
 

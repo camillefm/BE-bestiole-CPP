@@ -69,7 +69,10 @@ public :                                           // Forme canonique :
    void setY(int newY);
 
    double getSpeed();
+   double getFleeingSpeed();
    double getOrientation(); 
+   void setSpeed(double speed);
+   void setOrientation(double angle);
 
    friend bool operator==( const Bestiole & b1, const Bestiole & b2 );
 

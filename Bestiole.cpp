@@ -167,6 +167,18 @@ double Bestiole::getSpeed(){
    return vitesse;
 }
 
+double Bestiole::getFleeingSpeed(){
+   return vitesse;
+}
+
 double Bestiole::getOrientation(){
    return orientation;
+}
+
+void Bestiole::setSpeed(double speed){
+   vitesse=speed;
+}
+
+void Bestiole::setOrientation(double angle){
+   orientation=angle;
 }

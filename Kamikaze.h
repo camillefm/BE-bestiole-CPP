@@ -12,12 +12,13 @@ class Bestiole;
 class Kamikaze : virtual public Comportement {
 
 private:
-    double getSquarredDistance(Bestiole b1, Bestiole b2);
-    double getNewOrientation(Bestiole japanese,Bestiole american);
+    double getSquarredDistance(Bestiole& b1, Bestiole& b2);
+    double getNewOrientation(Bestiole& japanese,Bestiole& american);
 
 public:
     Kamikaze(void);
-    std::vector<double>  move(Bestiole b1, std::vector<Bestiole> listBestiolesVues);
+    virtual ~Kamikaze( void );
+    std::vector<double>  move(Bestiole& b1, std::vector<Bestiole> listBestiolesVues) override;
 
 };
 

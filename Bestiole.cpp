@@ -1,4 +1,8 @@
 #include "Bestiole.h"
+#include "Comportement.h"
+#include "Gregaire.h"
+#include "Kamikaze.h"
+#include "Peureuse.h"
 
 
 #include "Milieu.h"
@@ -14,8 +18,11 @@ const double      Bestiole::LIMITE_VUE = 30.;
 int               Bestiole::next = 0;
 
 
+
 Bestiole::Bestiole( void )
 {
+
+   Gregaire comportement();
 
    identite = ++next;
 
@@ -36,6 +43,8 @@ Bestiole::Bestiole( void )
 
 Bestiole::Bestiole( const Bestiole & b )
 {
+
+   comportement = new Peureuse;
 
    identite = ++next;
 
@@ -71,8 +80,10 @@ void Bestiole::initCoords( int xLim, int yLim )
 }
 
 
-void Bestiole::bouge( int xLim, int yLim )
+void Bestiole::bouge( int xLim, int yLim ,std::vector<Bestiole> listBestioles)
 {
+
+
 
    double         nx, ny;
    double         dx = cos( orientation )*vitesse;
@@ -80,8 +91,8 @@ void Bestiole::bouge( int xLim, int yLim )
    int            cx, cy;
 
 
-   cx = static_cast<int>( cumulX ); cumulX -= cx;
-   cy = static_cast<int>( cumulY ); cumulY -= cy;
+   cx = 0 ;//static_cast<int>( cumulX ); cumulX -= cx;
+   cy =0 ;// static_cast<int>( cumulY ); cumulY -= cy;
 
    nx = x + dx + cx;
    ny = y + dy + cy;
@@ -104,13 +115,34 @@ void Bestiole::bouge( int xLim, int yLim )
       cumulY += ny - y;
    }
 
+   vector<double> future = comportement->move(*this,listBestioles);
+
+
+
+   double kaka=future[1]-orientation;
+
+   if (kaka<-M_PI){kaka+=7*2*M_PI;}
+   while (kaka>=M_PI){
+      kaka-=2*M_PI;
+
+   }
+
+   std::cout <<"Pré-Orientation="<<std::endl;
+   std::cout <<orientation<<std::endl;
+   std::cout <<"KAKA="<<std::endl;
+   std::cout <<kaka<<std::endl;
+   orientation = future[1];
+   //orientation += 0.5*kaka/6;
+   std::cout <<"Après-Orientation= "<<std::endl;
+   std::cout <<orientation<<std::endl;
+
 }
 
 
 void Bestiole::action( Milieu & monMilieu )
 {
 
-   bouge( monMilieu.getWidth(), monMilieu.getHeight() );
+   bouge( monMilieu.getWidth(), monMilieu.getHeight() , monMilieu.getlisteBestioles());
 
 }
 

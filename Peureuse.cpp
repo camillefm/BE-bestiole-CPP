@@ -7,7 +7,6 @@ using namespace std;
 
 
 Peureuse::Peureuse(void){
-    return;
 };
 
 std::vector<double> Peureuse::getBariBestiole(vector<Bestiole> listBestiolesVues){
@@ -21,7 +20,7 @@ std::vector<double> Peureuse::getBariBestiole(vector<Bestiole> listBestiolesVues
     return result;
 }
 
-double Peureuse::getOppositeOrientation(Bestiole peureuse, std::vector<double> bariBestiole){
+double Peureuse::getOppositeOrientation(Bestiole& peureuse, std::vector<double> bariBestiole){
     double v[2] = {(double)(bariBestiole[0]-peureuse.getX()),(double)(bariBestiole[1]-peureuse.getY())};
     if (v[0]==0){
         if (v[1] >0) { return 3*M_PI/2;}
@@ -45,7 +44,7 @@ double Peureuse::getOppositeOrientation(Bestiole peureuse, std::vector<double> b
     return 0;
 }
 
-std::vector<double> Peureuse::move(Bestiole b1, std::vector<Bestiole> listBestiolesVues){
+std::vector<double> Peureuse::move(Bestiole& b1, std::vector<Bestiole> listBestiolesVues){
     double newOrientation = b1.getOrientation();
     double newSpeed = b1.getSpeed();
 

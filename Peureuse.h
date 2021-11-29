@@ -13,12 +13,12 @@ class Peureuse : virtual public Comportement {
 
 private :
     const int nb_bstl_envi_max=0;
-    double getOppositeOrientation(Bestiole peureuse, std::vector<double> bariBestiole);
+    double getOppositeOrientation(Bestiole& peureuse, std::vector<double> bariBestiole);
     std::vector<double> getBariBestiole(vector<Bestiole> listBestiolesVues);
 
 public:
     Peureuse(void);
-    std::vector<double>  move(Bestiole b1, std::vector<Bestiole> listBestiolesVues);
+    std::vector<double>  move(Bestiole& b1, std::vector<Bestiole> listBestiolesVues);
 
 };
 

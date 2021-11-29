@@ -11,9 +11,8 @@ class Bestiole;
 
 class Comportement {
 
-public:
-
-    virtual std::vector<double> move(Bestiole b1, std::vector<Bestiole> listBestiolesVues)=0;
+    public:
+        virtual std::vector<double> move(Bestiole& b1, std::vector<Bestiole> listBestiolesVues)=0;
 };
 
 

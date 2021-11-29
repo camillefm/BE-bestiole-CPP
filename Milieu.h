@@ -34,6 +34,8 @@ public :
 
    Bestiole getBestiole(int i);
 
+   std::vector<Bestiole>   getlisteBestioles();
+
 };
 
 

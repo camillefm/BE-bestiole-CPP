@@ -1,5 +1,5 @@
-main : main.cpp Bestiole.o Oeil.o Aquarium.o Milieu.o Prevoyante.o Peureuse.o Oreille.o Gregaire.o Kamikaze.o Nageoire.o Carapace.o Camouflage.o
-	g++ -Wall -std=c++11 -o main main.cpp Bestiole.o Prevoyante.o Peureuse.o Oeil.o Oreille.o Aquarium.o Kamikaze.o Gregaire.o Milieu.o Nageoire.o Carapace.o Camouflage.o -I . -lX11 -lpthread
+main : main.cpp Bestiole.o Oeil.o Aquarium.o Milieu.o Prevoyante.o Peureuse.o Oreille.o Gregaire.o Kamikaze.o Nageoire.o
+	g++ -Wall -std=c++11 -o main main.cpp Bestiole.o Prevoyante.o Peureuse.o Oeil.o Oreille.o Aquarium.o Kamikaze.o Gregaire.o Milieu.o -I . -lX11 -lpthread
 
 Bestiole.o : Bestiole.h Bestiole.cpp
 	g++ -Wall -std=c++11  -c Bestiole.cpp -I .

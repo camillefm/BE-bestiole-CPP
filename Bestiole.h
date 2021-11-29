@@ -4,13 +4,14 @@
 
 
 #include "UImg.h"
-#include "Comportement.h"
 //#include "Accessoire.h"
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
+class Comportement;
 
 class Milieu;
 
@@ -27,6 +28,8 @@ private :
 
 
 private :
+
+
    int               identite;
    int               x, y;
    double            cumulX, cumulY;
@@ -42,7 +45,7 @@ private :
    T               * couleur;
 
       //new code :
-   //Comportement      comportement;
+   Comportement * comportement;
 
    //listCapteurs :    listCapteur
    //listAccessoires:  listAccesoires
@@ -55,7 +58,7 @@ private :
 
 
 private :
-   void bouge( int xLim, int yLim );
+   void bouge( int xLim, int yLim , std::vector<Bestiole> listBestioles);
 
 public :                                           // Forme canonique :
    Bestiole( void );                               // Constructeur par defaut

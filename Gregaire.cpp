@@ -1,4 +1,5 @@
 #include "Gregaire.h"
+#include "Bestiole.h"
 #include "Comportement.h"
 #include <iostream>
 #include <vector>
@@ -10,7 +11,7 @@ Gregaire::Gregaire(void){
     return;
 };
 
-std::vector<double> Gregaire::move(Bestiole b1, std::vector<Bestiole> listBestiolesVues){
+std::vector<double> Gregaire::move(Bestiole& b1, std::vector<Bestiole> listBestiolesVues){
     double totalOrientation=0;
     for (Bestiole d : listBestiolesVues){
         totalOrientation+=d.getOrientation();
